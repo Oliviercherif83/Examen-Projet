@@ -1,0 +1,298 @@
+// Fonts
+// sass et sass loader -> librairie qui permet de compiler le fichier sass avec npm run dev
+
+// import de bootstrap 5
+@import "bootstrap";
+
+/* Déclaration des variables */
+$bg-header: #75b05a;
+$bg-footer: #ce5c5c;
+$body-bg: #f5f5f5;
+$fontsizeh1: 3rem;
+$fontsizeh2: 2.4rem;
+$fontsizeh3: 2.1rem;
+$buttonColor: $bg-header;
+$radius:50px;
+
+/* style général */
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    background-color: $body-bg;
+}
+
+header {
+    background-color: $bg-header;
+    height: 150px;
+    @media (max-width: 767px) {
+        height: auto;
+    }
+}
+
+footer {
+    background-color: $bg-footer;
+    height: 100px;
+    width: 100%;
+}
+
+header,
+footer {
+    color: #fff;
+}
+
+h1 {
+    font-size: $fontsizeh1;
+}
+
+h2 {
+    font-size: $fontsizeh2;
+}
+
+h3 {
+    font-size: $fontsizeh3;
+}
+
+main {
+    height: 100%;
+}
+
+p {
+    text-align: justify;
+}
+
+.container {
+    padding: 2rem 0;
+    @media (max-width: 991px) {
+        padding: 2rem 1rem;
+    }
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
+//style des propriétés flexible en utilisant flexbox
+.flexHeader,
+.flexFooter {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.flexHeader {
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.flexFooter {
+    justify-content: center;
+    flex-wrap: wrap;
+}
+// nav header page
+nav {
+    height: 100%;
+    & ul {
+        padding: 0px;
+        margin: 0px;
+        @media (max-width: 991px) {
+            text-align: center;
+        }
+        & li {
+            list-style: none;
+
+            @media (max-width: 991px) {
+                width: 100%;
+                padding: 0.7rem;
+            }
+            & a {
+                padding: 2rem;
+                color: #fff;
+                font-size: 2rem;
+                text-transform: uppercase;
+                text-decoration: none;
+                @media (max-width: 767px) {
+                    padding: 0;
+                }
+                &:hover {
+                    background-color: #fff;
+                    color: $bg-header;
+                }
+            }
+        }
+    }
+}
+
+.btn {
+    font-size: 2rem;
+    border-radius: $radius;
+    padding: 10px;
+}
+
+.btn-primary {
+    border: $buttonColor;
+    background-color: $buttonColor;
+    &:hover {
+        border: rgba($buttonColor, 0.8);
+        background-color: rgba($buttonColor, 0.8);
+    }
+    &:focus {
+        border: rgba($buttonColor, 0.8);
+        background-color: rgba($buttonColor, 0.8);
+    }
+}
+
+/*
+ LISTE DES UTILISATEURS
+*/
+.buttonDelete {
+    border: none;
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    text-decoration: none;
+    padding: 5px 10px;
+    &:hover {
+        background-color: #bf2d3b;
+        border-color: #bf2d3b;
+        color:#fff
+    }
+    &:focus {
+        background-color: #bf2d3b;
+        border-color: #bf2d3b;
+    }
+}
+
+/* Liste des recettes */
+
+
+
+.appFooter {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+// page recipe-list
+
+.listRecipe {
+    background-color: rgba(117, 176, 90, 0.2);
+    border: 2px solid rgb(117, 176, 90);
+    margin: 0 20px;
+    padding: 10px 10px;
+    @media (max-width: 767px) {
+        margin: 10px 0px;
+    }
+    & .imgRecipe {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    & .buttonDelete{
+        border-radius:$radius;
+        padding:10px; 
+    }
+}
+
+// page recipeshow
+.showRecipe {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    & img {
+        width: 100%;
+    }
+}
+
+// slider d'image page d'accueil
+#carouselExampleCaptions {
+    width: 1000px;
+    @media (max-width: 991px) {
+        width: 100%;
+    }
+    .img-slider {
+        width: 100%;
+        height: 700px !important;
+        @media (max-width: 767px) {
+            height: 300px !important;
+        }
+        & img {
+            width: 100%;
+            height: 100% !important;
+        }
+
+        & p {
+            text-align: center;
+        }
+        & .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.5);
+            bottom: 0;
+            padding: 30px;
+            width: 100%;
+            left: 0;
+            transition: all 2s ease;
+        }
+    }
+}
+
+//hamburger nav
+.navbar-dark {
+    & .navbar-toggler {
+        color: rgba(#fff, 0.5);
+        border-radius: 50px;
+        border: 2px solid #fff;
+        padding: 2rem;
+        transition: 2s ease;
+        &:focus {
+            box-shadow: none;
+        }
+        & .navbar-toggler-icon {
+            width: auto;
+            height: auto;
+            background: none;
+            & span {
+                display: block;
+                width: 33px;
+                height: 4px;
+                margin-bottom: 5px;
+                position: relative;
+                background: #cdcdcd;
+                border-radius: 3px;
+                z-index: 1;
+                background-color: #fff;
+            }
+
+            & span:last-child {
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
+
+.dropdown {
+    & .btn-secondary {
+        border-color: #568242;
+        background-color: #568242;
+        &:hover {
+            border-color: #568242;
+            background-color: #466a36;
+        }
+        &:focus {
+            border-color: #568242;
+            background-color: #466a36;
+        }
+    }
+}
